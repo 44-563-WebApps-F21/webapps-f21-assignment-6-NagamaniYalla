@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Compute</title>
+ </head>
+<body>
+<h2>Nagamani computes</h2>
+
+<form>
+    <label for="Base_form">Enter a base</label>
+    <input type ="number" id="form1_baseElement" name="Base_form" min=10 max=50 step=2 value=30> <br>
+
+    <label for="Exponent_form">Enter an Exponent</label>
+    <input type ="text" id="form1_exponentElement" name="Exponent_form" min=2 autofocus> <br>
+
+    <input type="button" onclick="powers()" value=" Compute">
+</form>
+<p id="result">This text will be displayed here!!!</p>
+
+<script> 
+function powers(){
+    console.log("Getting form values")
+    base = document.getElementById("form1_baseElement").value
+    exponent = document.getElementById("form1_exponentElement").value
+    result=""    
+    out = document.getElementById("result")
+    for(var i=1;i<=exponent;i++){       
+            result=result+ Math.pow(base,i)+" ";
+        }
+        out.innerHTML="Powers of "+base+" are: "+result;
+    }
+</script>
+
+<form>
+    <input type="radio" id="rg1_plus" value="plus" onclick="processRadio()" checked >
+    <label for="rg1_plus">+</label></br>
+  
+    <input type="radio" id="rg1_minus" value="minus" onclick="processRadio()">
+    <label for="rg1_minus">-</label></br>
+  
+    <input type="radio" id="rg1_multiplication" value="times" onclick="processRadio()">
+    <label for="rg1_multiplication">*</label></br>
+
+    <input type="radio" id="rg1_division" value="divide" onclick="processRadio()">
+    <label for="rg1_division">/</label></br>    
+  </form>
+  
+  <p id=result2>Results are displayed here!!!</p>
